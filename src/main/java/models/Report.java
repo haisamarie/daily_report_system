@@ -76,6 +76,18 @@ public class Report {
     private String title;
 
     /**
+     * 出勤時間
+     */
+    @Column(name = JpaConst.REP_COL_ATTENDANCE, nullable = false)
+    private String attendance;
+
+    /**
+     * 退勤時間
+     */
+    @Column(name = JpaConst.REP_COL_LEAVING, nullable = false)
+    private String leaving;
+
+    /**
      * 日報の内容
      */
     @Lob

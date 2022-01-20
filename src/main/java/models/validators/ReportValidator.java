@@ -25,6 +25,18 @@ public class ReportValidator {
             errors.add(titleError);
         }
 
+        //出勤時間のチェック
+        String attendanceError = validateAttendance(rv.getAttendance());
+        if (!attendanceError.equals("")) {
+            errors.add(attendanceError);
+        }
+
+        //退勤時間のチェック
+        String leavingError = validateLeaving(rv.getLeaving());
+        if (!leavingError.equals("")) {
+            errors.add(leavingError);
+        }
+
         //内容のチェック
         String contentError = validateContent(rv.getContent());
         if (!contentError.equals("")) {
@@ -41,6 +53,34 @@ public class ReportValidator {
      */
     private static String validateTitle(String title) {
         if (title == null || title.equals("")) {
+            return MessageConst.E_NOTITLE.getMessage();
+        }
+
+        //入力値がある場合は空文字を返却
+        return "";
+    }
+
+    /**
+     * 出勤時間に入力値があるかをチェックし、入力値がなければエラーメッセージを返却
+     * @param attendance 出勤時間
+     * @return エラーメッセージ
+     */
+    private static String validateAttendance(String attendance) {
+        if (attendance == null || attendance.equals("")) {
+            return MessageConst.E_NOTITLE.getMessage();
+        }
+
+        //入力値がある場合は空文字を返却
+        return "";
+    }
+
+    /**
+     * 退勤時間に入力値があるかをチェックし、入力値がなければエラーメッセージを返却
+     * @param leaving 退勤時間
+     * @return エラーメッセージ
+     */
+    private static String validateLeaving(String leaving) {
+        if (leaving == null || leaving.equals("")) {
             return MessageConst.E_NOTITLE.getMessage();
         }
 

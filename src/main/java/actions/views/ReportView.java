@@ -39,6 +39,16 @@ public class ReportView {
     private String title;
 
     /**
+     *出勤時間
+     */
+    private String attendance;
+
+    /**
+     * 退勤時間
+     */
+    private String leaving;
+
+    /**
      * 日報の内容
      */
     private String content;
